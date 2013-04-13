@@ -10,9 +10,13 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.testSourceEncoding>UTF-8</project.build.testSourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
 		<vaadin.version>7.0.0</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 	</properties>
+	
 	<repositories>
 		<repository>
 			<id>vaadin-addons</id>
@@ -29,6 +33,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
+	
 	<pluginRepositories>
 		<pluginRepository>
 			<id>vaadin-snapshots</id>
@@ -41,6 +46,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.vaadin</groupId>
