@@ -1,10 +1,10 @@
-package com.vaadin.tutorial.addressbook.it;
+package com.vaadin.tutorial.addressbook.it.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Page object for the address book list
+ * Page object for the new contact form
  * 
  */
 public class NewContactPage {

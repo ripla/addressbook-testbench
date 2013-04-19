@@ -7,7 +7,7 @@ In order to manage the addressbok
 As a user
 I want to add contacts
 
-Scenario: Add a new contact 
+Scenario: Add a new contact and it shows in the results
 
 Given the front page
 When the user clicks the add contact button

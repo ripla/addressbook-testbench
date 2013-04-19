@@ -3,16 +3,20 @@ package com.vaadin.tutorial.addressbook.it;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.vaadin.testbench.TestBench;
 import com.vaadin.testbench.TestBenchTestCase;
-import org.junit.Ignore;
+import com.vaadin.tutorial.addressbook.it.pages.ContactRow;
+import com.vaadin.tutorial.addressbook.it.pages.ListPage;
+import com.vaadin.tutorial.addressbook.it.pages.NewContactPage;
+import com.vaadin.tutorial.addressbook.it.stories.AddContact;
 
 /**
- * This is exactly the same test as in add_contact.feature
+ * This is exactly the same test as in {@link AddContact}
  */
 public class EnterSvenCodedTest extends TestBenchTestCase {
 
@@ -29,7 +33,7 @@ public class EnterSvenCodedTest extends TestBenchTestCase {
 
     @Test
     @Ignore
-    // only run the Cucumber scenarios for now
+    // only run the JBehave stories for now
     public void enterSven() throws InterruptedException {
         ListPage listPage = PageFactory.initElements(getDriver(),
                 ListPage.class);

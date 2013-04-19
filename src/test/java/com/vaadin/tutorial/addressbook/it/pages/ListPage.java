@@ -1,4 +1,4 @@
-package com.vaadin.tutorial.addressbook.it;
+package com.vaadin.tutorial.addressbook.it.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

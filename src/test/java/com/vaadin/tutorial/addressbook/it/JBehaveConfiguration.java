@@ -8,9 +8,9 @@ import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.embedder.StoryControls;
 import org.jbehave.core.failures.FailingUponPendingStep;
 import org.jbehave.core.i18n.LocalizedKeywords;
+import org.jbehave.core.io.CasePreservingResolver;
 import org.jbehave.core.io.CodeLocations;
 import org.jbehave.core.io.LoadFromClasspath;
-import org.jbehave.core.io.UnderscoredCamelCaseResolver;
 import org.jbehave.core.junit.JUnitStory;
 import org.jbehave.core.model.ExamplesTableFactory;
 import org.jbehave.core.parsers.RegexStoryParser;
@@ -19,10 +19,12 @@ import org.jbehave.core.reporters.FilePrintStreamFactory.ResolveToPackagedName;
 import org.jbehave.core.reporters.Format;
 import org.jbehave.core.reporters.FreemarkerViewGenerator;
 import org.jbehave.core.reporters.StoryReporterBuilder;
-import org.jbehave.core.steps.InjectableStepsFactory;
-import org.jbehave.core.steps.InstanceStepsFactory;
 import org.jbehave.core.steps.ParameterConverters;
 
+/**
+ * JBehave JUnit configuration for all stories.
+ * 
+ */
 public abstract class JBehaveConfiguration extends JUnitStory {
 
     private final CrossReference xref = new CrossReference();
@@ -36,14 +38,12 @@ public abstract class JBehaveConfiguration extends JUnitStory {
 
     @Override
     public Configuration configuration() {
+        // most of the settings have default values and could probably be
+        // omitted
         Class<? extends Embeddable> embeddableClass = this.getClass();
         Properties viewResources = new FreemarkerViewGenerator()
                 .defaultViewProperties();
-        // viewResources.put("decorateNonHtml", "true");
-        // Start from default ParameterConverters instance
         ParameterConverters parameterConverters = new ParameterConverters();
-        // factory to allow parameter conversion and loading from external
-        // resources (used by StoryParser too)
         ExamplesTableFactory examplesTableFactory = new ExamplesTableFactory(
                 new LocalizedKeywords(),
                 new LoadFromClasspath(embeddableClass), parameterConverters);
@@ -54,7 +54,7 @@ public abstract class JBehaveConfiguration extends JUnitStory {
                                 .doSkipScenariosAfterFailure(true))
                 .useStoryLoader(new LoadFromClasspath(embeddableClass))
                 .useStoryParser(new RegexStoryParser(examplesTableFactory))
-                .useStoryPathResolver(new UnderscoredCamelCaseResolver())
+                .useStoryPathResolver(new CasePreservingResolver())
                 .useStoryReporterBuilder(
                         new StoryReporterBuilder()
                                 .withCodeLocation(
@@ -70,10 +70,5 @@ public abstract class JBehaveConfiguration extends JUnitStory {
                 .useParameterConverters(parameterConverters)
                 .useStepMonitor(xref.getStepMonitor())
                 .usePendingStepStrategy(new FailingUponPendingStep());
-    }
-
-    @Override
-    public InjectableStepsFactory stepsFactory() {
-        return new InstanceStepsFactory(configuration(), new AddContactSteps());
     }
 }

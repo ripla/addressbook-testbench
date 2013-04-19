@@ -1,4 +1,6 @@
-package com.vaadin.tutorial.addressbook.it;
+package com.vaadin.tutorial.addressbook.it.pages;
+
+import com.google.common.base.Objects;
 
 /**
  * A single contact row.
@@ -42,5 +44,12 @@ public class ContactRow {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(ContactRow.class)
+                .add("firstname", firstname).add("lastname", lastname)
+                .add("company", company).toString();
     }
 }
