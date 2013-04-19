@@ -10,6 +10,10 @@ public class ContactRow {
     private String lastname;
     private String company;
 
+    public ContactRow() {
+
+    }
+
     public ContactRow(String firstname, String lastname, String company) {
         this.firstname = firstname;
         this.lastname = lastname;

@@ -89,17 +89,11 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-picocontainer</artifactId>
-			<version>1.1.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.1.2</version>
-			<scope>test</scope>
+			<groupId>org.jbehave</groupId>
+			<artifactId>jbehave-core</artifactId>
+			<version>3.7.5</version>
 		</dependency>
 	</dependencies>
 
@@ -194,9 +188,9 @@
 			</plugin>
 			<plugin>
 				<!-- block unit tests execution -->
-				<!-- in a real world scenario, use a separate package for unit tests -->
+				<!-- in a real world application, use a separate package for unit tests -->
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.14.1</version>
+				<version>2.14</version>
 				<configuration>
 					<skip>true</skip>
 				</configuration>
@@ -217,6 +211,13 @@
 					<includes>
 						<include>**/it/**/*.java</include>
 					</includes>
+					<!-- So that the browser correctly gains focus -->
+					<systemProperties>
+						<property>
+							<name>java.awt.headless</name>
+							<value>true</value>
+						</property>
+					</systemProperties>
 				</configuration>
 			</plugin>
 		</plugins>
