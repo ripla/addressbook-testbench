@@ -31,8 +31,4 @@ To run the tests, use
 
 	mvn verify
 
-And if you're using OSX, remember to add
-
-	-Djava.awt.headless=true
-
-The tests use [TestBench](https://vaadin.com/add-ons/testbench) and the [Page objects pattern](https://code.google.com/p/selenium/wiki/PageObjects). The BDD tests use [Cucumber](http://cukes.info/)
+The tests use [TestBench](https://vaadin.com/add-ons/testbench) and the [Page objects pattern](https://code.google.com/p/selenium/wiki/PageObjects). The BDD tests use [JBehave](http://jbehave.org/)
