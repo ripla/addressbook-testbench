@@ -15,9 +15,10 @@ Make sure you have installed [Maven](http://maven.apache.org/) and
 [Firefox browser](https://www.mozilla.org/en-US/firefox/new/) installed 
 in your machine where you run the tests. 
 
-   https://github.com/samie/testbench-jbehave
-   cd testbench-jbehave
-   mvn verify
+
+    https://github.com/samie/testbench-jbehave
+    cd testbench-jbehave
+    mvn verify
 
 
 Importing in Eclipse
