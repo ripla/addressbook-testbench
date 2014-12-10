@@ -3,6 +3,7 @@ package com.vaadin.tutorial.addressbook;
 import java.util.Random;
 
 import com.vaadin.annotations.Title;
+import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.data.Container.Filter;
 import com.vaadin.data.Item;
 import com.vaadin.data.Property;
@@ -12,6 +13,7 @@ import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.event.FieldEvents.TextChangeEvent;
 import com.vaadin.event.FieldEvents.TextChangeListener;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.AbstractTextField.TextChangeEventMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -23,6 +25,7 @@ import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import javax.servlet.annotation.WebServlet;
 
 /* 
  * UI class is the starting point for your app. You may deploy it with VaadinServlet
@@ -34,6 +37,10 @@ import com.vaadin.ui.VerticalLayout;
 @Title("Addressbook")
 public class AddressbookUI extends UI {
 
+    @WebServlet(value = "/*", asyncSupported = true)
+    @VaadinServletConfiguration(productionMode = false, ui = AddressbookUI.class)
+    public static class AddressbookServlet extends VaadinServlet {};
+    
     /* User interface components are stored in session. */
     private final Table contactList = new Table();
     private final TextField searchField = new TextField();
@@ -246,7 +253,7 @@ public class AddressbookUI extends UI {
 
     private void initContactList() {
         contactList.setContainerDataSource(contactContainer);
-        contactList.setVisibleColumns(new String[] { FNAME, LNAME, COMPANY });
+        contactList.setVisibleColumns(new Object[] { FNAME, LNAME, COMPANY });
         contactList.setSelectable(true);
         contactList.setImmediate(true);
 
