@@ -16,7 +16,7 @@ Make sure you have installed [Maven](http://maven.apache.org/) and
 in your machine where you run the tests. 
 
 
-    https://github.com/samie/testbench-jbehave
+    git clone https://github.com/samie/testbench-jbehave
     cd testbench-jbehave
     mvn verify
 
