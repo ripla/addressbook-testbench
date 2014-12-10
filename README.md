@@ -15,10 +15,13 @@ Make sure you have installed [Maven](http://maven.apache.org/) and
 [Firefox browser](https://www.mozilla.org/en-US/firefox/new/) installed 
 in your machine where you run the tests. 
 
-   https://github.com/samie/testbench-jbehave
-   cd testbench-jbehave
-   mvn verify
+    git clone https://github.com/samie/testbench-jbehave
+    cd testbench-jbehave
+    mvn verify
 
+License for TestBench 4
+-----------------------
+Vaadin TestBench 4 needs a valid license key installed in your development machine. If you don't have one you can always grap a trial key from [https://vaadin.com/addon/vaadin-testbench](https://vaadin.com/addon/vaadin-testbench)
 
 Importing in Eclipse
 --------------------
