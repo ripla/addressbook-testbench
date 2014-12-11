@@ -1,5 +1,7 @@
 package com.vaadin.tutorial.addressbook.it.pages;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,9 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 
 /**
  * Page object for the address book list
- * 
+ *
  */
 public class ListPage {
+
     @FindBy(id = "new-contact")
     private WebElement newContactButton;
 
@@ -36,8 +39,13 @@ public class ListPage {
         return PageFactory.initElements(driver, NewContactPage.class);
     }
 
-    public void searchFor(String param) {
+    public void searchFor(String param) {        
         searchField.sendKeys(param);
+        // Wait for TextChangeListener timeout
+        try {
+            Thread.sleep(500); 
+        } catch (InterruptedException ignored) {
+        }
     }
 
     public ContactRow getOnlyResultRow() {
