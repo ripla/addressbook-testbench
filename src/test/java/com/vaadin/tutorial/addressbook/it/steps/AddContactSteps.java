@@ -64,7 +64,6 @@ public class AddContactSteps extends TestBenchTestCase {
     @When("searches for \"$name\"")
     public void searchesFor(String searchterm) throws Throwable {
         listPage.searchFor(searchterm);
-        Thread.sleep(500);
     }
 
     @Then("the only row should contain these values:$expected")
