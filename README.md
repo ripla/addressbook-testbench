@@ -15,7 +15,7 @@ Make sure you have installed [Maven](http://maven.apache.org/) and
 [Firefox browser](https://www.mozilla.org/en-US/firefox/new/) installed 
 in your machine where you run the tests. 
 
-    git clone https://github.com/samie/testbench-jbehave
+    git clone https://github.com/ripla/testbench-jbehave
     cd testbench-jbehave
     mvn verify
 
