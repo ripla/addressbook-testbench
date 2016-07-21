@@ -1,7 +1,6 @@
 package com.vaadin.tutorial.addressbook;
 
-import java.util.Random;
-
+import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.data.Container.Filter;
 import com.vaadin.data.Item;
@@ -12,6 +11,7 @@ import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.event.FieldEvents.TextChangeEvent;
 import com.vaadin.event.FieldEvents.TextChangeListener;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.AbstractTextField.TextChangeEventMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -23,15 +23,20 @@ import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
 
-/* 
+import java.util.Random;
+
+/*
  * UI class is the starting point for your app. You may deploy it with VaadinServlet
  * or VaadinPortlet by giving your UI class name a parameter. When you browse to your
- * app a web page showing your UI is automatically generated. Or you may choose to 
- * embed your UI to an existing web page. 
+ * app a web page showing your UI is automatically generated. Or you may choose to
+ * embed your UI to an existing web page.
  */
 @SuppressWarnings("serial")
 @Title("Addressbook")
+@SpringUI
+@Theme(ValoTheme.THEME_NAME)
 public class AddressbookUI extends UI {
 
     /* User interface components are stored in session. */

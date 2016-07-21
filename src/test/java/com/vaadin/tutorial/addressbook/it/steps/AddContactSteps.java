@@ -1,11 +1,10 @@
 package com.vaadin.tutorial.addressbook.it.steps;
 
-import static com.vaadin.tutorial.addressbook.it.JBehaveTableMapper.tableToBean;
-import static org.junit.Assert.assertEquals;
-
-import java.util.List;
-import java.util.Map;
-
+import com.vaadin.testbench.TestBench;
+import com.vaadin.testbench.TestBenchTestCase;
+import com.vaadin.tutorial.addressbook.it.pages.ContactRow;
+import com.vaadin.tutorial.addressbook.it.pages.ListPage;
+import com.vaadin.tutorial.addressbook.it.pages.NewContactPage;
 import org.jbehave.core.annotations.AfterScenario;
 import org.jbehave.core.annotations.BeforeScenario;
 import org.jbehave.core.annotations.Given;
@@ -15,15 +14,15 @@ import org.jbehave.core.model.ExamplesTable;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import com.vaadin.testbench.TestBench;
-import com.vaadin.testbench.TestBenchTestCase;
-import com.vaadin.tutorial.addressbook.it.pages.ContactRow;
-import com.vaadin.tutorial.addressbook.it.pages.ListPage;
-import com.vaadin.tutorial.addressbook.it.pages.NewContactPage;
+import java.util.List;
+import java.util.Map;
+
+import static com.vaadin.tutorial.addressbook.it.JBehaveTableMapper.tableToBean;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Steps for the "Add contact" story.
- * 
+ *
  */
 public class AddContactSteps extends TestBenchTestCase {
 
@@ -33,7 +32,7 @@ public class AddContactSteps extends TestBenchTestCase {
     @BeforeScenario
     public void beforeScenario() {
         setDriver(TestBench.createDriver(new FirefoxDriver()));
-        getDriver().get("http://localhost:8080/?restartApplication");
+        getDriver().get("http://localhost:9000/?restartApplication");
     }
 
     @AfterScenario
