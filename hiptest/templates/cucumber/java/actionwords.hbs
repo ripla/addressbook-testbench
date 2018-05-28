@@ -1,0 +1,18 @@
+package {{{ context.package }}};
+
+import io.cucumber.datatable.DataTable;
+import cucumber.api.java.en.*;
+
+public class StepDefinitions {{#curly}}{{#indent}}
+
+private Actionwords actionwords;
+
+public StepDefinitions(DriverHolder driverHolder) {{#curly}}{{#indent}}
+this.actionwords = new Actionwords(driverHolder);
+{{/indent}}
+{{/curly}}
+
+{{#each rendered_children.actionwords}}{{{this}}}
+{{/each}}
+{{/indent}}
+{{/curly}}

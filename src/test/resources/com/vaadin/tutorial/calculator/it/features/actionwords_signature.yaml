@@ -1,0 +1,15 @@
+---
+- name: a calculator with the value "val"
+  uid: 3ba072bc-ce3c-4a35-beb2-6173fea0c5e2
+  parameters:
+  - name: val
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: the user adds
+  uid: 5f98d02c-a606-44dd-bd96-26b0e6373fbb
+  parameters: []
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: the calculator value is "value"
+  uid: 56cde95f-fe80-40f5-8050-63651780bbd8
+  parameters:
+  - name: value
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
